@@ -34,41 +34,51 @@ h1 {
     padding: 0;
     margin: 0;
 }
-.menu{
-    width: 600px;
 
+.menu {
+    width: 400px;
+    padding-right: 5px;
 }
-.overmenu li{
+
+.overmenu li {
     background-color: #6bb567;
     list-style: none;
-    padding: 6%;
+    padding: 10px;
     border-radius: 10px;
     margin-top: 4px;
 }
-.overmenu li a{
-    text-decoration: none;
+.overmenu a {
     color: white;
+    text-decoration: none;
 }
-.undermenu{
-    padding:0%;
+.overmenu a:hover {
+    text-decoration: underline;
+}
+
+.undermenu {
+padding: 0px;
 }
 .undermenu li {
     background-color: #d9d9d9;
-    list-style: none;
-    padding-top: 6%;
-    padding-bottom: 6%;
-    padding-left: 25%;
     margin-bottom: 2px;
+    padding-left: 35px;
+    margin-top: 2px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
 }
-.undermenu li a{
+.undermenu a {
+    color: #000000;
     text-decoration: none;
-    color: black;
 }
-.undermenu a:hover{
-    text-decoration: underline;
+
+.underundermenu {
+    padding: 0px;
 }
-.overmenu a:hover{
-    text-decoration: underline;
+.underundermenu li {
+    background-color: hsl(0, 0%, 85%, 25%);
+    padding-left: 45px;
+
 }
 .linje{
     width: 1px;
