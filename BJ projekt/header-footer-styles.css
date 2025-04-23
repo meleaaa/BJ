@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+input:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: transparent !important;
+}
+input:focus::-moz-placeholder { /* Firefox 19+ */
+    color: transparent !important;
+}
+input:focus:-ms-input-placeholder { /* IE 10+ */
+    color: transparent !important;
+}
+input:focus:-moz-placeholder { /* Firefox 18- */
+    color: transparent !important;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    display: flex;
+    width: 70%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+header a img {
+    height: 100px;
+}
+
+.header-container {
+    display: flex;
+    padding: 40px 20px 0px 20px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    align-self: stretch;
+}
+
+.search-bar {
+    display: flex;
+    width: fit-content;
+    height: 35px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 100px;
+}
+
+input {
+    font-family: 'Nunito Sans', sans-serif;
+    border: none;
+    width: 200px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+}
+
+#basket-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    aspect-ratio: 1;
+    background-color: #536181;
+    border: none;
+    border-radius: 6px;
+}
+
+#basket-button:hover {
+    background-color: #848FA9;
+}
+      
+#basket-button svg {
+    width: 20px;
+}
+
+nav {
+    display: flex;
+    height: 40px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    align-self: stretch;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #6BB567;
+    text-decoration: underline;
+}
+
+footer {
+    background-color: rgba(107, 181, 103, 0.75);
+    display: flex;
+    width: 100%;
+    padding: 40px 0px;
+    margin: auto;
+    align-items: center;
+}
+
+footer img {
+    height: 100px;
+}
+
+.footer-container {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%;
+    color: white;
+}
+
+footer a {
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 100px;
+    background-color: white;
+    opacity: 0.3;
+}
+
+/* SLIDING BANNER */
+
+.banner {
+    margin: auto;
+    width: 70%;
+    overflow: hidden;
+    position: relative;
+    background: white;
+}
+
+.banner-track {
+    display: flex;
+    width: fit-content;
+}
+
+.logos-slide {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    padding: 40px 50px;
+}
+
+.logo-wrapper img {
+    height: 28px;
+    object-fit: contain;
+}
+
+.banner-mask-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+    z-index: 2;
+}
+
+.banner-mask-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+    z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+    .burger-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        width: 100%;
+        padding: 20px;
+    }
+    header h1 {
+        display: none;
+    }
+    header nav {
+        display: none;
+    }
+    .header-container {
+        padding: 0;
+    }
+    .header-right {
+        gap: 24px;
+    }
+    header img {
+        height: 80px;
+    }
+    .banner {
+        width: 100%;
+    }
+    .logos-slide {
+        gap: 60px;
+    }
+    .banner-mask-left {
+        display: none;
+    }
+    .banner-mask-right {
+        display: none;
+    }
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .footer-container .vertical-line {
+        display: none;
+    }
+    footer img {
+        height: 80px;
+    }
+    input {
+        display: none;
+    }
+    .search-bar {
+        border: none;
+        padding: 0;
+    }
+}
+
+
+
+
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 0;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: #6bb567; 
+    background-color: rgb(107, 181, 103, 0.9); 
+    overflow-y: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 100px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    padding-bottom: 20px;
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #000000;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+ 
+
+
+
+  /* Style for the submenu */
+.submenu {
+    margin-top: 10px;
+}
+
+.submenu a {
+    font-size: 14px; /* Optional: Smaller font for submenu links */
+    color: #000000; /* Optional: Different color for submenu links */
+    text-decoration: none;
+    background-color: rgb(224, 224, 224, 0.7);
+    padding: 10px;
+    margin: 2px;
+}
+
+.submenu a:hover {
+    text-decoration: underline;
+}
